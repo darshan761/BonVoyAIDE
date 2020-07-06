@@ -1,27 +1,25 @@
 package com.example.bonvoyaide;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.bonvoyaide.adapters.CountryAdapter;
 import com.example.bonvoyaide.models.Country;
 import com.example.bonvoyaide.services.GetCOVData;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,7 +32,7 @@ public class Covid extends AppCompatActivity {
     private TextView deaths;
     private TextView active;
     private List<Country> countriesList = new ArrayList<>();
-
+    private static final String ROOT_API = "https://api.covid19api.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +48,7 @@ public class Covid extends AppCompatActivity {
 
 
         try {
-            String response = new GetCOVData().execute("https://api.covid19api.com/countries").get();
+            String response = new GetCOVData().execute(ROOT_API + "/countries").get();
 
             JSONObject json = new JSONObject(response);
             JSONArray array = json.getJSONArray("data");
@@ -93,17 +91,24 @@ public class Covid extends AppCompatActivity {
     private void getSelectedCountryData() {
         Optional<Country> selectedCountryOptional = countriesList.stream().filter(country -> country.getCountry().equalsIgnoreCase(spinner.getSelectedItem().toString())).findFirst();
         Country selectedCountry = selectedCountryOptional.get();
-        Log.e("selected",selectedCountry.getSlug());
+        Log.e("selected", selectedCountry.getSlug());
 
-        try{
-            String response = new GetCOVData().execute("https://api.covid19api.com/country/" + selectedCountry.getSlug()).get();
+        try {
+            String response = new GetCOVData().execute(ROOT_API + "/country/" + selectedCountry.getSlug()).get();
             JSONObject json = new JSONObject(response);
             JSONArray array = json.getJSONArray("data");
 
             for (int i = 0; i < array.length(); i++) {
                 JSONObject cases = new JSONObject(array.get(i).toString());
-                Log.d("date", cases.getString("Date").substring(0,11));
-                if(cases.getString("Date").substring(0,10).equalsIgnoreCase("2020-07-03")){
+                Log.d("date", cases.getString("Date").substring(0, 10));
+
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.DATE, -1);
+                String formattedDate = dateFormat.format(cal.getTime());
+                Log.d("Yesterday's date", formattedDate);
+
+                if (cases.getString("Date").substring(0, 10).equalsIgnoreCase(formattedDate)) {
                     Log.d("Confirmed", cases.getString("Confirmed"));
                     Log.d("Deaths", cases.getString("Deaths"));
                     Log.d("Recovered", cases.getString("Recovered"));
@@ -114,7 +119,7 @@ public class Covid extends AppCompatActivity {
                 }
 
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
