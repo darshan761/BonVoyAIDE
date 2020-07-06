@@ -59,14 +59,14 @@ public class Dashboard extends AppCompatActivity {
         stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, MainActivity.class));
+                startActivity(new Intent(Dashboard.this, SentimentReview.class));
             }
         });
 
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, MainActivity.class));
+                startActivity(new Intent(Dashboard.this, MapsActivity.class));
             }
         });
 
