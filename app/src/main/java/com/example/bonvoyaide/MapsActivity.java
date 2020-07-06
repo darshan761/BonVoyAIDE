@@ -57,7 +57,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Operators");
+    DatabaseReference myRef = database.getReference("Zones");
     Location currentLocation;
     private String TAG = "Darshan";
     FusedLocationProviderClient fusedLocationProviderClient;
