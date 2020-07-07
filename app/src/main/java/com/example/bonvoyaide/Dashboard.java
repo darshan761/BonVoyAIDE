@@ -15,6 +15,7 @@ public class Dashboard extends AppCompatActivity {
     private ImageView help;
     private ImageView stats;
     private ImageView map;
+    private ImageView feedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class Dashboard extends AppCompatActivity {
         help = findViewById(R.id.help);
         stats = findViewById(R.id.stats);
         map = findViewById(R.id.map);
+        feedback = findViewById(R.id.feedback);
 
         covid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +61,7 @@ public class Dashboard extends AppCompatActivity {
         stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, SentimentReview.class));
+                startActivity(new Intent(Dashboard.this, News.class));
             }
         });
 
@@ -67,6 +69,13 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Dashboard.this, MapsActivity.class));
+            }
+        });
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this, SentimentReview.class));
             }
         });
 
