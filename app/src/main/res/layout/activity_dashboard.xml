@@ -86,7 +86,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Book Trip"
+                        android:text="Checkpoints"
                         android:textSize="18sp"
                         android:textColor="#6f6f6f">
 
@@ -121,7 +121,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Find Hotels"
+                        android:text="Get Info"
                         android:textSize="18sp"
                         android:textColor="#6f6f6f">
 

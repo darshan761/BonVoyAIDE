@@ -208,8 +208,15 @@
 
             </LinearLayout>
 
+
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
+    <ImageView
+        android:src="@drawable/covid_g"
+        android:layout_width="410dp"
+        android:layout_height="250dp" >
+
+    </ImageView>
 </LinearLayout>
 

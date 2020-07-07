@@ -40,8 +40,6 @@
         <activity android:name=".Chatbot" />
         <activity android:name=".ReviewWall" />
         <activity android:name=".Covid" />
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
         <activity android:name=".Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
