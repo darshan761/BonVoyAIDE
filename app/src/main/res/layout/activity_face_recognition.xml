@@ -22,6 +22,7 @@
             android:layout_weight="1"
             android:text="Detect Face"
             android:layout_width="0dp"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_height="wrap_content" />
 
         <Button
@@ -29,6 +30,7 @@
             android:layout_weight="1"
             android:text="Identify Face"
             android:layout_width="0dp"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
