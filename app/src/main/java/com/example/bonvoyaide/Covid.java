@@ -104,7 +104,7 @@ public class Covid extends AppCompatActivity {
 
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 Calendar cal = Calendar.getInstance();
-                cal.add(Calendar.DATE, -1);
+                cal.add(Calendar.DATE, -2);
                 String formattedDate = dateFormat.format(cal.getTime());
                 Log.d("Yesterday's date", formattedDate);
 

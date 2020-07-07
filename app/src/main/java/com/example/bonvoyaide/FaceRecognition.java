@@ -105,9 +105,8 @@ public class FaceRecognition extends AppCompatActivity {
         setContentView(R.layout.activity_face_recognition);
         detectionProgressDialog = new ProgressDialog(this);
 
-        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.billgates);
+        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.face);
         imageView = findViewById(R.id.imageView);
-        Toast.makeText(getApplicationContext(), "Press the Detect Button to take a picture. Press Identify to identify the person.", Toast.LENGTH_LONG).show();
         imageView.setImageBitmap(mBitmap);
         Button btnDetect = findViewById(R.id.btnDetectFace);
         Button btnIdentify = findViewById(R.id.btnIdentify);
