@@ -45,7 +45,7 @@ public class Dashboard extends AppCompatActivity {
         hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, MainActivity.class));
+                startActivity(new Intent(Dashboard.this, ReviewWall.class));
             }
         });
 

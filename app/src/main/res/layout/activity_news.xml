@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".News">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardElevation="6dp"
+
+            android:padding="20sp"
+            android:layout_margin="12dp"
+            >
+            <LinearLayout
+
+                android:layout_width="300sp"
+                android:layout_height="250sp"
+                android:orientation="vertical"
+                android:padding="5sp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:background="#4CB6FF"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:text="COVID IS BULLSHIT"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="positive"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:background="@drawable/button_bg"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barcelona"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+</ScrollView>
