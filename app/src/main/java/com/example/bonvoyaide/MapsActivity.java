@@ -132,6 +132,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     LatLng park = new LatLng(Double.parseDouble(lat), Double.parseDouble(longt));
                     googleMap.addMarker(new MarkerOptions().position(park)
                             .title(name));
+
+                    Circle circle = googleMap.addCircle(new CircleOptions()
+                            .center(park)
+                            .radius(500)
+                            .fillColor(0x30ff0000));
                     Log.d(TAG, "Value is: " + name);
 //                           Toast.makeText(getApplicationContext(),"hello"+name,Toast.LENGTH_LONG).show();
                 }
