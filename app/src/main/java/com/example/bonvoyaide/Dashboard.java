@@ -47,7 +47,7 @@ public class Dashboard extends AppCompatActivity {
         hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, ReviewWall.class));
+                startActivity(new Intent(Dashboard.this, News.class));
             }
         });
 
@@ -61,7 +61,7 @@ public class Dashboard extends AppCompatActivity {
         stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Dashboard.this, News.class));
+                startActivity(new Intent(Dashboard.this, Analysis.class));
             }
         });
 
